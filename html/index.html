@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>星曜互娱 - Star Amuse</title>
+	<link rel="stylesheet" href="css/jquery.fullPage.css">
+	<link rel="stylesheet" href="css/animations.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.fullPage.min.js"></script>
+	<style type="text/css">
+		.section{ position: relative;}
+		.nav{ height: 84px; background: #fff; position: absolute; top: 0; left: 0; width: 100%; z-index: 999;}
+		.nav-inner{ width: 1120px; margin: 0 auto;}
+		.logo{ width: 290px; float: left;}
+		.menu-items{ float: left; padding: 24px 0 0 0;}
+		.menu-items li{  float: left; font-size: 16px; color: #000; margin: 0 40px 0 0;}
+		.menu-items li a{border: 3px solid rgba(0,0,0,0); border-radius: 15px; display: block; padding: 0 15px;height: 38px;line-height: 38px; text-align: center; }
+		.menu-items li.current a,
+		.menu-items li a:hover{ background: #fff; border: 3px solid #e8236e; color: #e8236e; border-radius: 15px;}
+		.scroll-tip{ position: absolute; bottom: 20px; width: 100%; text-align: center; color: #000; font-size: 14px; line-height: 20px;}
+		.scroll-tip img{ margin-bottom: 10px;}
+
+		.section1{ background: url(images/bg_page1.jpg) center top no-repeat;}
+		.slogan{ width: 377px; position: absolute; top: 0; left: 50%; margin-left: -189px; text-align: center;}
+		.business{ position: absolute; top: 415px; left: 0; width: 100%;}
+		.business-inner{ width: 1120px; margin:0 auto; text-align: center;}
+		.business-btn{ padding-bottom: 20px;}
+		.business-line{ padding-bottom: 20px;}
+		.business-items li{ float: left; font-size: 22px; color: #000; width: 20%;}
+		.business-items li img{ background: #fff; border-radius: 50%; padding: 8px; margin-bottom: 5px;}
+		.section2{ background: url(images/bg_page2.jpg);}
+		.section2 .nav{ background: rgba(255,255,255,.5);}
+		.page2-slide{ width: 1120px; margin: 0 auto; position: relative;}
+		.page2-title{ position: absolute; top: 130px; text-align: center; font-size: 16px; width: 100%;}
+		.page2-title-text{ padding-top: 25px; }
+		.page2-slide-item{ float: left; margin: 0 16px;}
+		.page2-slide-text{ text-align: center;}
+		.page2-slide-text h4{ font-size: 20px; font-weight: normal; margin-bottom: 5px; padding-top: 10px;}
+		.page2-slide-text p{ font-size: 16px; color: #febdd7;}
+		.page2-slide-img img{background: rgba(255,255,255,.5); border-radius: 50%; padding: 12px; margin-bottom: 5px;}
+		.section2 .scroll-tip{ color: #f8aecc;}
+		.page3-title{ position: absolute; top: 130px; text-align: center; font-size: 16px; width: 100%;}
+		.page3-title-text{ padding-top: 25px; color: #000;}
+		.section3{background: url(images/bg_page3.jpg) center top no-repeat;}
+		.section3 .scroll-tip{ color: #c9c8cc;}
+		.page3-tab{ width: 1120px; margin: 0 auto; font-size: 25px; color: #000; text-align: center; position: absolute; top: 275px; left: 50%; margin-left: -560px;}
+		.page3-tab li{ display: inline-block; margin: 0 30px; padding-bottom: 5px;}
+		.page3-tab li.current{ border-bottom: 3px solid #e8236e;}
+		.page3-tab li.current a,.page3-tab li a:hover{ color: #e8236e;}
+
+		.section4{ background: #373737;}
+		.section4 .nav{ background: #ebebeb;}
+		.page4-title{ position: absolute; top: 130px; text-align: center; font-size: 16px; width: 100%;}
+		.page4-title-text{ padding-top: 25px; color: #fff;}
+		.platforms{ position: absolute; top: 280px; left: 0; width: 100%;}
+		.platforms ul{ width: 1120px; margin: 0 auto;}
+		.platforms li{ float: left; margin: 0 6px 12px;}
+		.platforms li img{ border: 1px solid #d8d8d8;}
+		.page4-title-2{position: absolute; top: 600px; text-align: center; font-size: 16px; width: 100%;}
+		.footer{ height: 120px; background: #fff; width: 100%; position: absolute; left:0; bottom: 0; font-size: 14px; color: #373737; width: 100%;}
+		.footer-inner{ width: 1120px; margin: 0 auto; padding-top: 25px;}
+		.footer-logo{ border-right: 1px solid #adadad; float: left; width: 215px; margin-right: 40px;}
+		.page4-title-contact{ width: 1120px; margin: 10px auto; padding-top: 15px;}
+		.page4-title-contact li{ width:364px; height: 83px; display: inline-block; color: #fff; margin: 0 3px; }
+		.page4-title-contact a{ display: block;background: #232323;border-radius: 20px;width: 338px;  height: 83px;padding: 17px 0 0 26px;}
+		.page4-title-contact li a:link,
+		.page4-title-contact li a:visited{ color: #fff;}
+		.page4-title-contact a:hover{ background: #262525; border-radius: 20px;}
+		.page4-title-contact li img{ float: left;}
+		.page4-title-contact li span{ float: left; margin:10px 0 0 30px;}
+
+		#menu{ position: fixed; top: 120px; right: 28px; z-index: 999; font-size: 16px; width: 105px;}
+		#menu li{ height: 28px; line-height: 28px; margin-bottom: 10px;}
+		#menu li a{ display: block; padding: 0 10px 0 15px;}
+		#menu li.active a{ background: #e8236e; border-radius: 10px; color: #fff;}
+		#menu li.active a em{ background-position: -13px 0;}
+		#menu li em{ width: 13px; height: 13px; background: url(images/circle.png) no-repeat; display: block; float: right; margin-top: 7px;}
+		#menu a:link,
+		#menu a:visited{ color: #0b0e13;}
+		.fp-viewing-page4 #menu a:link,
+		.fp-viewing-page4 #menu a:visited{ color: #fff;}
+	</style>
+</head>
+<body>
+<div id="menu">
+	<ul>
+		<li data-menuanchor="page1" class="active"><a href="#page1">核心业务<em></em></a></li>
+		<li data-menuanchor="page2"><a href="#page2">旗下艺人<em></em></a></li>
+		<li data-menuanchor="page3"><a href="#page3">节目相关<em></em></a></li>
+		<li data-menuanchor="page4"><a href="#page4">合作伙伴<em></em></a></li>
+	</ul>
+</div>
+<div id="main" class="main">
+	<div class="section section1">
+		<div class="nav pt-page-moveFromTop">
+			<div class="nav-inner">
+				<div class="logo"><a href="#"><img src="images/logo.png"></a></div>
+				<ul class="menu-items">
+					<li class="current"><a href="#">首页</a></li>
+					<li><a href="#">公司动态</a></li>
+					<li><a href="#">主播招募</a></li>
+					<li><a href="#">案例展示</a></li>
+					<li><a href="#">关于我们</a></li>
+					<li><a href="#">精彩赛事</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="slogan pt-page-moveFromLeft">
+			<div class="slogan-img"><img src="images/slogan.png"></div>
+		</div>
+		<div class="business pt-page-moveFromRight">
+			<div class="business-inner">
+				<div class="business-btn"><img src="images/slogan-btn.png"></div>
+				<div class="business-line"><img src="images/line.png"></div>
+				<div class="business-items">
+					<ul class="clearfix">
+						<li><img src="images/business-1.png"><br>电竞大神合作</li>
+						<li><img src="images/business-2.png"><br>美女主播合作</li>
+						<li><img src="images/business-3.png"><br>自有主播培养</li>
+						<li><img src="images/business-4.png"><br>直播节目制作</li>
+						<li><img src="images/business-5.png"><br>电竞赛事承办</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="scroll-tip pt-page-moveFromBottom">
+			<img src="images/scroll.png">
+			<br>
+			鼠标向下滚动翻页
+		</div>
+	</div>
+	<div class="section section2">
+ 		<div class="nav pt-page-moveFromTop">
+			<div class="nav-inner">
+				<div class="logo"><a href="#"><img src="images/logo.png"></a></div>
+				<ul class="menu-items">
+					<li class="current"><a href="#">首页</a></li>
+					<li><a href="#">公司动态</a></li>
+					<li><a href="#">主播招募</a></li>
+					<li><a href="#">案例展示</a></li>
+					<li><a href="#">关于我们</a></li>
+					<li><a href="#">精彩赛事</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="page2-title pt-page-scaleUp">
+			<div class="page2-title-img"><img src="images/page2_title.png"></div>
+			<div class="page2-title-text">50名以上自有游戏主播，固定直播某款游戏，长期服务让人气不会一哄而散！</div>
+		</div>
+		<div class="page2-slide pt-page-rotatePullLeft">
+			<div class="slide">
+				<div class="page2-slide-item">
+					<div class="page2-slide-img"><img src="images/girl-1.png"></div>
+					<div class="page2-slide-text">
+						<h4>Angelababy</h4>
+						<p>
+						- 中国影视女演员 -<br>
+						-模特-
+						</p>
+					</div>
+				</div>
+				<div class="page2-slide-item">
+					<div class="page2-slide-img"><img src="images/girl-2.png"></div>
+					<div class="page2-slide-text">
+						<h4>Angelababy</h4>
+						<p>
+						- 中国影视女演员 -<br>
+						-模特-
+						</p>
+					</div>
+				</div>
+				<div class="page2-slide-item">
+					<div class="page2-slide-img"><img src="images/girl-3.png"></div>
+					<div class="page2-slide-text">
+						<h4>Angelababy</h4>
+						<p>
+						- 中国影视女演员 -<br>
+						-模特-
+						</p>
+					</div>
+				</div>				
+				<div class="page2-slide-item">
+					<div class="page2-slide-img"><img src="images/girl-4.png"></div>
+					<div class="page2-slide-text">
+						<h4>Angelababy</h4>
+						<p>
+						- 中国影视女演员 -<br>
+						-模特-
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="slide">
+				<div class="page2-slide-item">
+					<div class="page2-slide-img"><img src="images/girl-1.png"></div>
+					<div class="page2-slide-text">
+						<h4>Angelababy</h4>
+						<p>
+						- 中国影视女演员 -<br>
+						-模特-
+						</p>
+					</div>
+				</div>
+				<div class="page2-slide-item">
+					<div class="page2-slide-img"><img src="images/girl-2.png"></div>
+					<div class="page2-slide-text">
+						<h4>Angelababy</h4>
+						<p>
+						- 中国影视女演员 -<br>
+						-模特-
+						</p>
+					</div>
+				</div>
+				<div class="page2-slide-item">
+					<div class="page2-slide-img"><img src="images/girl-3.png"></div>
+					<div class="page2-slide-text">
+						<h4>Angelababy</h4>
+						<p>
+						- 中国影视女演员 -<br>
+						-模特-
+						</p>
+					</div>
+				</div>				
+				<div class="page2-slide-item">
+					<div class="page2-slide-img"><img src="images/girl-4.png"></div>
+					<div class="page2-slide-text">
+						<h4>Angelababy</h4>
+						<p>
+						- 中国影视女演员 -<br>
+						-模特-
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="scroll-tip pt-page-moveFromBottom">
+			<img src="images/scroll1.png">
+			<br>
+			鼠标向下滚动翻页
+		</div>
+	</div>
+	<div class="section section3">
+ 		<div class="nav pt-page-moveFromTop">
+			<div class="nav-inner">
+				<div class="logo"><a href="#"><img src="images/logo.png"></a></div>
+				<ul class="menu-items">
+					<li class="current"><a href="#">首页</a></li>
+					<li><a href="#">公司动态</a></li>
+					<li><a href="#">主播招募</a></li>
+					<li><a href="#">案例展示</a></li>
+					<li><a href="#">关于我们</a></li>
+					<li><a href="#">精彩赛事</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="page3-title">
+			<div class="page3-title-img"><img src="images/page3_title.png"></div>
+			<div class="page3-title-text">高质量的原创节目内容产出，高人气主播长期入驻，与各大知名游戏厂商进行深度合作！</div>
+		</div>
+		<div class="page3-tab">
+			<ul>
+				<li class="current"><a href="javascript:;">原创节目</a></li>
+				<li><a href="javascript:;">艺人照片</a></li>
+				<li><a href="javascript:;">节目花絮</a></li>
+				<li><a href="javascript:;">游戏CG</a></li>
+			</ul>
+		</div>
+		<div class="page3-tab-content">
+			<div class="page2-slide">
+				<div class="slide">
+					<div class="page2-slide-item">
+						<div class="page2-slide-img"><img src="images/girl-1.png"></div>
+						<div class="page2-slide-text">
+							<h4>Angelababy</h4>
+							<p>
+							- 中国影视女演员 -<br>
+							-模特-
+							</p>
+						</div>
+					</div>
+					<div class="page2-slide-item">
+						<div class="page2-slide-img"><img src="images/girl-2.png"></div>
+						<div class="page2-slide-text">
+							<h4>Angelababy</h4>
+							<p>
+							- 中国影视女演员 -<br>
+							-模特-
+							</p>
+						</div>
+					</div>
+					<div class="page2-slide-item">
+						<div class="page2-slide-img"><img src="images/girl-3.png"></div>
+						<div class="page2-slide-text">
+							<h4>Angelababy</h4>
+							<p>
+							- 中国影视女演员 -<br>
+							-模特-
+							</p>
+						</div>
+					</div>				
+					<div class="page2-slide-item">
+						<div class="page2-slide-img"><img src="images/girl-4.png"></div>
+						<div class="page2-slide-text">
+							<h4>Angelababy</h4>
+							<p>
+							- 中国影视女演员 -<br>
+							-模特-
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="slide">
+					<div class="page2-slide-item">
+						<div class="page2-slide-img"><img src="images/girl-1.png"></div>
+						<div class="page2-slide-text">
+							<h4>Angelababy</h4>
+							<p>
+							- 中国影视女演员 -<br>
+							-模特-
+							</p>
+						</div>
+					</div>
+					<div class="page2-slide-item">
+						<div class="page2-slide-img"><img src="images/girl-2.png"></div>
+						<div class="page2-slide-text">
+							<h4>Angelababy</h4>
+							<p>
+							- 中国影视女演员 -<br>
+							-模特-
+							</p>
+						</div>
+					</div>
+					<div class="page2-slide-item">
+						<div class="page2-slide-img"><img src="images/girl-3.png"></div>
+						<div class="page2-slide-text">
+							<h4>Angelababy</h4>
+							<p>
+							- 中国影视女演员 -<br>
+							-模特-
+							</p>
+						</div>
+					</div>				
+					<div class="page2-slide-item">
+						<div class="page2-slide-img"><img src="images/girl-4.png"></div>
+						<div class="page2-slide-text">
+							<h4>Angelababy</h4>
+							<p>
+							- 中国影视女演员 -<br>
+							-模特-
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+		</div>
+
+		<div class="scroll-tip pt-page-moveFromBottom">
+			<img src="images/scroll2.png">
+			<br>
+			鼠标向下滚动翻页
+		</div>
+
+	</div>
+	<div class="section section4">
+ 		<div class="nav pt-page-moveFromTop">
+			<div class="nav-inner">
+				<div class="logo"><a href="#"><img src="images/logo.png"></a></div>
+				<ul class="menu-items">
+					<li class="current"><a href="#">首页</a></li>
+					<li><a href="#">公司动态</a></li>
+					<li><a href="#">主播招募</a></li>
+					<li><a href="#">案例展示</a></li>
+					<li><a href="#">关于我们</a></li>
+					<li><a href="#">精彩赛事</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="page4-title">
+			<div class="page4-title-img"><img src="images/page4_title.png"></div>
+			<div class="page4-title-text">与各大直播平台深度合作，获取平台优质资源！（排名不分先后）</div>
+		</div>
+		<div class="platforms">
+			<ul>
+				<li><a href="#"><img src="images/platform-1.jpg"></a></li>
+				<li><a href="#"><img src="images/platform-2.jpg"></a></li>
+				<li><a href="#"><img src="images/platform-3.jpg"></a></li>
+				<li><a href="#"><img src="images/platform-4.jpg"></a></li>
+				<li><a href="#"><img src="images/platform-5.jpg"></a></li>
+				<li><a href="#"><img src="images/platform-6.jpg"></a></li>
+			</ul>
+		</div>
+		<div class="page4-title-2">
+			<div class="page4-title-img"><img src="images/page4_title_2.png"></div>
+			<div class="page4-title-contact">
+				<ul>
+					<li class="contact-1"><a href="#"><img src="images/weibo.png"><span>关注官方微博<br>了解实时信息</span></a></li>
+					<li class="contact-2"><a href="#"><img src="images/weixin.png"><span>关注官方微信<br>各种福利放送</span></a></li>
+					<li class="contact-3"><a href="#"><img src="images/qq.png"><span>洽谈商业合作<br>长期主播招募</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footer-inner">
+				<div class="footer-logo"><img src="images/footer_logo.png"></div>
+				<div class="copyright">
+					邮箱：Justin@xingyao.com<br>
+					公司地址：上海市徐汇区桂箐路69号30号楼5楼F座  联系电话：021-25455874<br>
+					Copyright 2016 xingyao.com 上海星曜互娱乐网络科技有限公司 沪ICP备1231234号
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	$(function(){
+		$('#main').fullpage({
+			sectionsColor: ['', '', '', '#373737'],
+			anchors: ['page1', 'page2', 'page3', 'page4'],
+			menu: '#menu'
+		});
+	})
+</script>
+</body>
+</html>
