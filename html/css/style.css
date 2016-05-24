@@ -10,3 +10,109 @@ a:hover { color:#333;  /*transition:all 0.5s ease; -moz-transition:all 0.5s ease
 .clearfix{*zoom:1; clear:both;}
 .clearfix:after{display:block; overflow:hidden; clear:both; height:0px;  visibility:hidden; content:".";}
 
+.section{ position: relative;}
+.nav{ height: 84px; background: #fff; position: absolute; top: 0; left: 0; width: 100%; z-index: 999;}
+.nav-inner{ width: 1120px; margin: 0 auto;}
+.logo{ width: 290px; float: left;}
+.menu-items{ float: left; padding: 24px 0 0 0;}
+.menu-items li{  float: left; font-size: 16px; color: #000; margin: 0 40px 0 0;}
+.menu-items li a{border: 3px solid rgba(0,0,0,0); border-radius: 15px; display: block; padding: 0 15px;height: 38px;line-height: 38px; text-align: center; }
+.menu-items li.current a,
+.menu-items li a:hover{ background: #fff; border: 3px solid #e8236e; color: #e8236e; border-radius: 15px;}
+.scroll-tip{ position: absolute; bottom: 20px; width: 100%; text-align: center; color: #000; font-size: 14px; line-height: 20px;}
+.scroll-tip img{ margin-bottom: 10px;}
+
+.section1{ background: url(../images/bg_page1.jpg) center top no-repeat;}
+.slogan{ width: 377px; position: absolute; top: 0; left: 50%; margin-left: -189px; text-align: center;}
+.business{ position: absolute; top: 415px; left: 0; width: 100%;}
+.business-inner{ width: 1120px; margin:0 auto; text-align: center;}
+.business-btn{ padding-bottom: 20px;}
+.business-line{ padding-bottom: 20px;}
+.business-items li{ float: left; font-size: 16px; color: #000; width: 20%;}
+.business-items li img{ background: #fff; border-radius: 50%; padding: 8px; margin-bottom: 5px;}
+.section2{ background: url(../images/bg_page2.jpg);}
+.section2 .nav{ background: rgba(255,255,255,.5);}
+.page2-slide{ width: 1120px; margin: 0 auto; position: relative; top: 50px;}
+.page2-title{ position: absolute; top: 130px; text-align: center; font-size: 16px; width: 100%;}
+.page2-title-text{ padding-top: 25px; }
+.page2-slide-item{ float: left; margin: 0 16px;}
+.page2-slide-text{ text-align: center;}
+.page2-slide-text h4{ font-size: 20px; font-weight: normal; margin-bottom: 5px; padding-top: 10px;}
+.page2-slide-text p{ font-size: 16px; color: #febdd7;}
+.page2-slide-img img{background: rgba(255,255,255,.5); border-radius: 50%; padding: 12px; margin-bottom: 5px;}
+.section2 .scroll-tip{ color: #f8aecc;}
+.page3-title{ position: absolute; top: 130px; text-align: center; font-size: 16px; width: 100%;}
+.page3-title-text{ padding-top: 25px; color: #000;}
+.section3{background: url(../images/bg_page3.jpg) center top no-repeat;}
+.section3 .scroll-tip{ color: #c9c8cc;}
+.page3-tab{ width: 1120px; margin: 0 auto; font-size: 25px; color: #000; text-align: center; position: absolute; top: 315px; left: 50%; margin-left: -560px;}
+.page3-tab li{ display: inline-block; margin: 0 30px; padding-bottom: 5px;}
+.page3-tab li.current{ border-bottom: 3px solid #e8236e;}
+.page3-tab li.current a,.page3-tab li a:hover{ color: #e8236e;}
+.page3-tab-content{ width: 1120px; margin: 0 auto; font-size: 20px; line-height: 30px; position: relative; top: 40px;}
+.show-slide{ text-align: center;}
+
+.section4{ background: #373737;}
+.section4 .nav{ background: #ebebeb;}
+.page4-title{ position: absolute; top: 130px; text-align: center; font-size: 16px; width: 100%;}
+.page4-title-text{ padding-top: 25px; color: #fff;}
+.platforms{ position: absolute; top: 280px; left: 0; width: 100%;}
+.platforms ul{ width: 1120px; margin: 0 auto;}
+.platforms li{ float: left; margin: 0 6px 12px;}
+.platforms li img{ border: 1px solid #d8d8d8;}
+.page4-title-2{position: absolute; top: 600px; text-align: center; font-size: 16px; width: 100%;}
+.footer{ height: 120px; background: #fff; width: 100%; position: absolute; left:0; bottom: 0; font-size: 14px; color: #373737; width: 100%;}
+.footer-inner{ width: 1120px; margin: 0 auto; padding-top: 25px;}
+.footer-logo{ border-right: 1px solid #adadad; float: left; width: 215px; margin-right: 40px;}
+.page4-title-contact{ width: 1120px; margin: 10px auto; padding-top: 15px;}
+.page4-title-contact li{ width:364px; height: 83px; display: inline-block; color: #fff; margin: 0 3px; }
+.page4-title-contact a{ display: block;background: #232323;border-radius: 20px;width: 338px;  height: 83px;padding: 17px 0 0 26px;}
+.page4-title-contact li a:link,
+.page4-title-contact li a:visited{ color: #fff;}
+.page4-title-contact a:hover{ background: #262525; border-radius: 20px;}
+.page4-title-contact li img{ float: left;}
+.page4-title-contact li span{ float: left; margin:10px 0 0 30px;}
+
+#menu{ position: fixed; top: 120px; right: 28px; z-index: 999; font-size: 16px; width: 105px;}
+#menu li{ height: 28px; line-height: 28px; margin-bottom: 10px;}
+#menu li a{ display: block; padding: 0 10px 0 15px;}
+#menu li.active a{ background: #e8236e; border-radius: 10px; color: #fff;}
+#menu li.active a em{ background-position: -13px 0;}
+#menu li em{ width: 13px; height: 13px; background: url(../images/circle.png) no-repeat; display: block; float: right; margin-top: 7px;}
+#menu a:link,
+#menu a:visited{ color: #0b0e13;}
+.fp-viewing-page4 #menu a:link,
+.fp-viewing-page4 #menu a:visited{ color: #fff;}
+.slick-arrow{ width: 63px; height: 63px; background: url(../images/arrow2.png) no-repeat; display: block; position: absolute; top: 74px;}
+.slick-prev { background-position: -126px 0; left: -100px;}
+.slick-disabled.slick-prev{ background-position: -189px 0;}
+.slick-next { background-position: 0 0; right: -85px;}
+.slick-disabled.slick-next{ background-position: -63px 0;}
+
+@media all and (max-height: 850px){
+	.slogan-img img{ height: 350px;}
+	.business{ top: 350px;}
+	.business-btn{ padding-bottom: 5px;}
+	.page2-slide{ position: relative; top: 50px;}
+	.page3-tab{ top: 295px;}
+	.page3-tab-content{top:67px;}
+	.page4-title{ top: 100px;}
+	.platforms{ top: 230px;}
+	.platforms li img{ width: 80%;}
+	.page4-title-2{ top: 495px;}
+}
+
+@media all and (max-height: 700px){
+	.slogan-img img{ height: 260px;}
+	.business{ top: 260px;}	
+	.page2-slide{ position: relative; top: 70px;}
+	.page3-tab{ top: 260px;}
+	.page3-tab-content{top:105px;}
+	.page4-title-text{ padding-top: 5px;}
+	.platforms li img{ width: 65%;}
+	.page4-title-2{ top: 440px;}
+	.footer{ height: 80px;}
+	.footer-inner{ padding-top: 10px;}
+	.page4-title-contact a{ padding: 10px 0 0 10px;}
+	.page4-title-contact{ margin-top: 0;}
+}
