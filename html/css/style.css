@@ -38,6 +38,8 @@ a:hover { color: #333; /* transition: all 0.5s ease; -moz-transition: all 0.5s e
 .page2-slide-text { text-align: center; }
 .page2-slide-text h4 { font-size: 20px; font-weight: normal; margin-bottom: 5px; padding-top: 10px; }
 .page2-slide-text p { font-size: 16px; color: #febdd7; }
+.page2-slide-text a:link,
+.page2-slide-text a:visited{ color: #fff;}
 .page2-slide-img img { background: rgba(255, 255, 255, .5); border-radius: 50%; padding: 12px; margin-bottom: 5px; }
 .section2 .scroll-tip { color: #f8aecc; }
 .page3-title { position: absolute; top: 130px; text-align: center; font-size: 16px; width: 100%; }
@@ -197,3 +199,13 @@ a:hover { color: #333; /* transition: all 0.5s ease; -moz-transition: all 0.5s e
 .recruit-contact-text a:link,
 .recruit-contact-text a:visited{ color: #ff5e9b;}
 .recruit-contact-text a:hover{ text-decoration: underline;}
+
+.anchor-page{ background: #1b1b1b;}
+.anchor{ height: 1480px; background: url(../images/bg_anchor.png) top right no-repeat #f15993; border: 20px solid #fff; margin: 50px 0; position: relative; padding-left: 140px; color: #fff;}
+.anchor-img-1{ position: absolute; top: 0; left: 0;}
+.anchor-img-2{ position: absolute; bottom: 0; right: 0;}
+.anchor h1{ margin: 650px 0 0; font-size: 64px; font-weight: bold;}
+.anchor h2{ font-size: 30px; font-weight: bold;}
+.anchor h2 span{ font-size: 22px;}
+.anchor-info-1, .anchor-info-2{ font-size: 20px; line-height: 30px;}
+.anchor-info-1{ padding: 60px 0 50px;}

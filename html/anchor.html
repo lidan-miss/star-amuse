@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>主播详情 - 星曜互娱 - Star Amuse</title>
+	<link rel="stylesheet" href="css/vendor.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/vendor.js"></script>
+</head>
+<body class="anchor-page">
+<div class="nav">
+	<div class="nav-inner">
+		<div class="logo"><a href="#"><img src="images/logo.png"></a></div>
+		<ul class="menu-items">
+			<li><a href="index.html">首页</a></li>
+			<li><a href="news.html">公司动态</a></li>
+			<li><a href="recruit.html">主播招募</a></li>
+			<li><a href="showcase.html">案例展示</a></li>
+			<li><a href="about.html">关于我们</a></li>
+			<li><a href="#">精彩赛事</a></li>
+		</ul>
+	</div>
+</div>
+<div class="content anchor-content">
+	<div class="anchor">
+		<div class="anchor-img-1"></div>
+		<div class="anchor-img-2"></div>
+		<h1></h1>
+		<h2></h2>
+		<p class="anchor-info-1"></p>
+		<p class="anchor-info-2"></p>
+	</div>
+</div>
+<div class="footer footer-in">
+	<div class="footer-inner">
+		<div class="footer-logo"><img src="images/footer_logo.png"></div>
+		<div class="copyright">
+			邮箱：Justin@xingyao.com<br>
+			公司地址：上海市徐汇区桂箐路69号30号楼5楼F座  联系电话：021-25455874<br>
+			Copyright 2016 xingyao.com 上海星曜互娱乐网络科技有限公司 沪ICP备1231234号
+		</div>
+	</div>
+</div>
+<script src="js/anchorinfo.js"></script>
+<script>
+function getParams() {
+	var url = location.search, o = {}; 
+	if (url.indexOf("?") != -1) { 
+		var str = url.substr(1); 
+		strs = str.split("&");
+		for(var i = 0; i < strs.length; i ++) { 
+			o[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]); 
+		} 
+	} 
+	return o; 
+}
+var id = getParams()['id'];
+
+if(id && anchorinfo){
+	for(var i = 0; i < anchorinfo.length; i++){
+		if(anchorinfo[i].id == id){
+			$('h1').text(anchorinfo[i].info.title);
+			$('h2').html(anchorinfo[i].info.name + ' /<span>' + anchorinfo[i].info.location + '</span>');
+			$('.anchor-info-1').html(anchorinfo[i].info.info1);
+			$('.anchor-info-2').html(anchorinfo[i].info.info2);
+			$('.anchor-img-1').html('<img src="' + anchorinfo[i].info.img1 + '">');
+			$('.anchor-img-2').html('<img src="' + anchorinfo[i].info.img2 + '">');
+			break;
+		}
+	}
+}
+</script>
+</body>
+</html>
