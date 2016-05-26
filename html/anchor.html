@@ -60,12 +60,13 @@ var id = getParams()['id'];
 if(id && anchorinfo){
 	for(var i = 0; i < anchorinfo.length; i++){
 		if(anchorinfo[i].id == id){
-			$('h1').text(anchorinfo[i].info.title);
-			$('h2').html(anchorinfo[i].info.name + ' /<span>' + anchorinfo[i].info.location + '</span>');
-			$('.anchor-info-1').html(anchorinfo[i].info.info1);
-			$('.anchor-info-2').html(anchorinfo[i].info.info2);
-			$('.anchor-img-1').html('<img src="' + anchorinfo[i].info.img1 + '">');
-			$('.anchor-img-2').html('<img src="' + anchorinfo[i].info.img2 + '">');
+			var info = anchorinfo[i].info;
+			$('h1').text(info.title);
+			$('h2').html(info.name + ' /<span>' + info.location + '</span>');
+			$('.anchor-info-1').html(info.info1);
+			$('.anchor-info-2').html(info.info2);
+			$('.anchor-img-1').html('<img src="' + info.img1 + '">');
+			$('.anchor-img-2').html('<img src="' + info.img2 + '">');
 			break;
 		}
 	}
