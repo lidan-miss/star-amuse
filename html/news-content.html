@@ -24,21 +24,9 @@
 </div>
 <div class="banner banner-news-list"></div>
 <div class="content news-content">
-	<h1>星曜互娱登录新三板</h1>
-	<div class="publish-date">2016-5-23</div>
+	<h1></h1>
+	<div class="publish-date"></div>
 	<div class="news-con">
-		<p>
-			星曜互娱登录新三板，创始人身价百亿，登录新一期福布斯中国排行榜，创始人陈阿弟表示：直播时代已经来
-临，我们已经准备好迎接挑战！
-		</p>
-		<p>
-			星曜互娱登录新三板，创始人身价百亿，登录新一期福布斯中国排行榜，创始人陈阿弟表示：直播时代已经来
-临，我们已经准备好迎接挑战！
-		</p>
-		<p>
-			星曜互娱登录新三板，创始人身价百亿，登录新一期福布斯中国排行榜，创始人陈阿弟表示：直播时代已经来
-临，我们已经准备好迎接挑战！
-		</p>
 	</div>
 </div>
 <div class="footer footer-in">
@@ -51,5 +39,32 @@
 		</div>
 	</div>
 </div>
+<script>
+function getParams() {
+	var url = location.search, o = {}; 
+	if (url.indexOf("?") != -1) { 
+		var str = url.substr(1); 
+		strs = str.split("&");
+		for(var i = 0; i < strs.length; i ++) { 
+			o[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]); 
+		} 
+	} 
+	return o; 
+}
+var id = getParams()['id'];
+
+if(id){
+	$.ajax({
+		url: 'js/news/' + id + '.json',
+		dataType: 'json',
+		success: function(news){
+			$('.news-content h1').text(news.title);
+			$('.news-content .publish-date').text(news.date);
+			$('.news-content .news-con').html(news.content);	
+		}
+	})
+}
+</script>
+
 </body>
 </html>

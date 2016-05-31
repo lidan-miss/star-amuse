@@ -41,6 +41,7 @@ a:hover { color: #333; /* transition: all 0.5s ease; -moz-transition: all 0.5s e
 .page2-slide-text a:link,
 .page2-slide-text a:visited{ color: #fff;}
 .page2-slide-img img { background: rgba(255, 255, 255, .5); border-radius: 50%; padding: 12px; margin-bottom: 5px; }
+.page2-slide-img:hover img{ background: rgba(255,255,255,.6); opacity: .9;}
 .section2 .scroll-tip { color: #f8aecc; }
 .page3-title { position: absolute; top: 130px; text-align: center; font-size: 16px; width: 100%; }
 .page3-title-text { padding-top: 25px; color: #000; }
@@ -51,6 +52,7 @@ a:hover { color: #333; /* transition: all 0.5s ease; -moz-transition: all 0.5s e
 .page3-tab li.current { border-bottom: 3px solid #e8236e; }
 .page3-tab li.current a, .page3-tab li a:hover { color: #e8236e; }
 .page3-tab-content { width: 1120px; margin: 0 auto; font-size: 20px; line-height: 30px; position: relative; top: 40px; }
+.page3-tab-content img:hover{ opacity: .9;}
 .show-slide { text-align: center; }
 .section4 { background: #373737; }
 .section4 .nav { background: #ebebeb; }
